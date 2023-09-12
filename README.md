@@ -1,5 +1,9 @@
 # Focused-view CTA for selective visualization of stroke related arteries
+![header image](https://github.com/0xC4/focused-view/blob/master/header.png?raw=true)
+
+
 This repository contains the experimental code and analysis scripts used for the study "Focused view CT angiography for selective visualization of stroke related arteries: technical feasibility".
+
 ```
 @article{roest2023focused,
   title={Focused view CT angiography for selective visualization of stroke related arteries: technical feasibility},
@@ -9,9 +13,9 @@ This repository contains the experimental code and analysis scripts used for the
   year={2023},
   publisher={Springer}
 }
-}
 ```
 
+# Usage instructions
 ### Requirements
 Deep learning was performed in Python version 3.7.4.
 The following requirements apply:
