@@ -1,5 +1,5 @@
-# MRI resampling in multi-center prostate MRI radiomics
-This repository contains the experimental code and analysis scripts used for the study "The Effect of Image Resampling on the Performance of Radiomics-Based Artificial Intelligence in Multicenter Prostate MRI".
+# Focused-view CTA for selective visualization of stroke related arteries
+This repository contains the experimental code and analysis scripts used for the study "Focused view CT angiography for selective visualization of stroke related arteries: technical feasibility".
 ```
 @article{roest2023focused,
   title={Focused view CT angiography for selective visualization of stroke related arteries: technical feasibility},
@@ -13,8 +13,8 @@ This repository contains the experimental code and analysis scripts used for the
 ```
 
 ### Requirements
-Radiomics modelling was performed in Python version 3.6.4.
-The following requirements apply for the training of radiomics models and hyperparameter tuning:
+Deep learning was performed in Python version 3.7.4.
+The following requirements apply:
 ```
 tensorflow>=2.2.0
 scikit-learn==1.2.2
@@ -53,10 +53,7 @@ source env/bin/activate
 env/Scripts/activate.ps1
 ```
 
-### 1. Feature extraction
-The code used for radiomics feature extraction is included in the `feature_extraction.ipynb` notebook file.
-
-### 2. Hyperparameter optimization
+### 1. Hyperparameter optimization
 We used Optuna to optimize the hyperparameters for each radiomics model.
 Optuna searches the search space to optimize an objective function, both of which are defined in `optimize.py`.
 To start a hyperparameter search for a set of radiomics features extracted in Step 1, run the following command:
@@ -69,7 +66,7 @@ Optuna also supports distributed optimization, for which a central database is u
 An example SLURM job-script that was used to run a distributed hyperparameter search across multiple CPU jobs is shown in `opt.job`.
 To run this script on your HPC cluster, modules / resources / partitions needs to be adjusted to your cluster's configuration. 
 
-### 3. Train U-Net ensemble using optimal hyperparameters
+### 2. Train U-Net ensemble using optimal hyperparameters
 To use the optimal settings derived in the previous step and train a U-Net with them, run `train.py`, or submit `train.job` to your SLURM scheduler.
 This will automatically extract the optimal settings from the SQLite database.
 
